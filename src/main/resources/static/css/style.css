@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+main{
+    width: 100%;
+}
+
+.centro{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.logotipo{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    margin-bottom: 80px;
+}
+
+.titulo h1{
+    font-weight: 700;
+    color: #6c757d;
+    margin-bottom: 30px;
+} 
+
+.nasa{
+    width: 300px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+
+}
+.nasa figure img{
+   width: 100%;
+}
+
+
+.botao a{
+    margin-right: 20px;
+}
