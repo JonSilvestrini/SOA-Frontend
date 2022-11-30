@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         
+
     <title>Planetas - API</title>
 </head>
 
 <body>
     <main class="container">
-        
+
         <div th:each="planeta : ${planetaVisiveis.corposCelestes}">
             <p th:text="${planeta.nome}"></p>
             <p th:text="${planeta.constelacao}"></p>
@@ -26,9 +26,9 @@
             <p th:text="${planeta.visivelOlhoNu}"></p>
         </div>
 
-        <p th:text="${clima.ceu}"></p>
-        <p th:text="${clima.visibilidade}"></p>
-        <p th:text="${clima.nuvens}"></p>
+        <p th:text="${planetaVisiveis.clima.ceu}"></p>
+        <p th:text="${planetaVisiveis.clima.visibilidade}"></p>
+        <p th:text="${planetaVisiveis.clima.nuvens}"></p>
 
     </main>
 </body>
