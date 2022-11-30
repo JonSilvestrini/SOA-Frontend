@@ -1,0 +1,22 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch FatecSoaNasaApplication",
+            "request": "launch",
+            "mainClass": "fatec.soa.nasa.FatecSoaNasaApplication",
+            "projectName": "fatec_soa_nasa",
+            "env": {"apiKey": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjY4OTY0NDk5LCJleHAiOjQ4MjQ2NTk2OTl9.P1_CkdK4m5hvhK0AFZQYwwBcbPqzGQzCwhbIJG302kmZOXqm2n3ZaFQf1wp7xx_i8UMVx5U3iFzkm0f0oWoS9A"}
+        }
+    ]
+}
