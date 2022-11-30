@@ -24,6 +24,6 @@ public class PlanetaController {
 
         model.addAttribute("planetaDetalhe", planetaDetalhe);
 
-        return "paginas/planeta";
+        return "paginas/planeta/detalhes";
     }
 }

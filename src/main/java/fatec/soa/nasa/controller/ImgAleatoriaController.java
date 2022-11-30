@@ -23,6 +23,6 @@ public class ImgAleatoriaController {
 
         model.addAttribute("imagemAleatoria", imagemAleatoria);
 
-        return "paginas/imagem_aleatoria";
+        return "paginas/imagem";
     }
 }

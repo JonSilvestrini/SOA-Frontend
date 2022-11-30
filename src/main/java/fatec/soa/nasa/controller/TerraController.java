@@ -1,5 +1,7 @@
 package fatec.soa.nasa.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,7 +20,7 @@ public class TerraController {
 
     @GetMapping("/terra/{date}")
     public String terra(@PathVariable("date") String date, ModelMap model){
-    	TerraImagemDTO terraImagem = terraService.getPlanetaVisivel(date);
+    	List<TerraImagemDTO> terraImagem = terraService.getPlanetaVisivel(date);
 
     	model.addAttribute("terraImagem", terraImagem);
 

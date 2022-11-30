@@ -22,6 +22,8 @@ public class PlanetaVisiveisController {
 
     	model.addAttribute("planetaVisiveis", planetaVisiveis);
 
-        return "paginas/planetas/visiveis";
+        System.out.println(planetaVisiveis.toString());
+
+        return "paginas/planeta/visiveis";
     }
 }

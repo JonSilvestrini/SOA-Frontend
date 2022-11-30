@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planeta Terra</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <!-- <input type="text" name="terra" id="terra"> -->
+
+        <div th:each="terra : ${terraImagem}">
+            <img th:src="${terra.urlImage}" alt="">
+            <p th:text="${terra.dateTime}"></p>
+            <p th:text="${terra.coord.lat}"></p>
+            <p th:text="${terra.coord.lon}"></p>
+        </div>
+
+  
+    </main>    
+</body>
+</html>
