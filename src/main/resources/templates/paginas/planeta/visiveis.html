@@ -14,18 +14,22 @@
         <div th:each="planeta : ${planetaVisiveis.corposCelestes}">
             <p th:text="${planeta.nome}"></p>
             <p th:text="${planeta.constelacao}"></p>
+            <p>Ascensão</p>
             <p th:text="${planeta.ascensao.negativo}"></p>
             <p th:text="${planeta.ascensao.horas}"></p>
             <p th:text="${planeta.ascensao.minutos}"></p>
             <p th:text="${planeta.ascensao.segundos}"></p>
+            <p>Declinação</p>
             <p th:text="${planeta.declinacao.negativo}"></p>
             <p th:text="${planeta.declinacao.grau}"></p>
             <p th:text="${planeta.declinacao.minutos}"></p>
             <p th:text="${planeta.declinacao.segundos}"></p>
+            <p>Visibilidade</p>
             <p th:text="${planeta.acimaHorizonte}"></p>
             <p th:text="${planeta.visivelOlhoNu}"></p>
         </div>
 
+        <p>Clima</p>
         <p th:text="${planetaVisiveis.clima.ceu}"></p>
         <p th:text="${planetaVisiveis.clima.visibilidade}"></p>
         <p th:text="${planetaVisiveis.clima.nuvens}"></p>
