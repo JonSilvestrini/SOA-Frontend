@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planeta Terra</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <form th:action="@{terra}" method="get">
+			<div>
+				<label for="data_terra">Data:</label> <input
+					type="date"  id="data_terra" name="data"  th:value="${data}"/>
+			</div>
+			<div>
+				<button type="submit" class="button">Procurar</button>
+			</div>
+		</form>
+
+		<p>Imagens não encontradas</p>
+
+    </main>
+</body>
+</html>
