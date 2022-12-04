@@ -11,6 +11,12 @@
 <body>
 
     <main class="container">
+	    <a th:href="@{/}">Página Inicial</a>
+	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
+	    <a th:href="@{/paginas/terra}">Terra</a>
+	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
+	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
+
         <form th:action="@{terra}" method="get">
 			<div>
 				<label for="data_terra">Data:</label> <input

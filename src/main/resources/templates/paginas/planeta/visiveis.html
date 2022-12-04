@@ -10,29 +10,45 @@
 
 <body>
     <main class="container">
+	    <a th:href="@{/}">Página Inicial</a>
+	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
+	    <a th:href="@{/paginas/terra}">Terra</a>
+	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
+	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
 
         <div th:each="planeta : ${planetaVisiveis.corposCelestes}">
-            <p th:text="${planeta.nome}"></p>
-            <p th:text="${planeta.constelacao}"></p>
-            <p>Ascensão</p>
-            <p th:text="${planeta.ascensao.negativo}"></p>
-            <p th:text="${planeta.ascensao.horas}"></p>
-            <p th:text="${planeta.ascensao.minutos}"></p>
-            <p th:text="${planeta.ascensao.segundos}"></p>
+            <label>Corpo Celeste: </label> <a th:href="@{/paginas/planeta/detalhe/}+${planeta.nome}" th:text="${planeta.nome}"></a>
+            <br>
+            <label>Constelação: </label> <label th:text="${planeta.constelacao}"></label>
+            <p>Ascensão:</p>
+            <label>Negativo: </label> <label th:text="${planeta.ascensao.negativo}"></label>
+            <br>
+            <label>Horas: </label> <label th:text="${planeta.ascensao.horas}"></label>
+            <br>
+            <label>Minutos: </label> <label th:text="${planeta.ascensao.minutos}"></label>
+            <br>
+            <label>Segundos: </label> <label th:text="${planeta.ascensao.segundos}"></label>
             <p>Declinação</p>
-            <p th:text="${planeta.declinacao.negativo}"></p>
-            <p th:text="${planeta.declinacao.grau}"></p>
-            <p th:text="${planeta.declinacao.minutos}"></p>
-            <p th:text="${planeta.declinacao.segundos}"></p>
+            <label>Negativo: </label> <label th:text="${planeta.declinacao.negativo}"></label>
+            <br>
+            <label>Grau: </label> <label th:text="${planeta.declinacao.grau}"></label>
+            <br>
+            <label>Minutos: </label> <label th:text="${planeta.declinacao.minutos}"></label>
+            <br>
+            <label>Segundos: </label> <label th:text="${planeta.declinacao.segundos}"></label>
             <p>Visibilidade</p>
-            <p th:text="${planeta.acimaHorizonte}"></p>
-            <p th:text="${planeta.visivelOlhoNu}"></p>
+            <label>Acima do Horizonte: </label><label th:text="${planeta.acimaHorizonte}"></label>
+            <br>
+            <label>Visível a olho nu: </label><label th:text="${planeta.visivelOlhoNu}"></label>
+            <br><br>
         </div>
 
         <p>Clima</p>
-        <p th:text="${planetaVisiveis.clima.ceu}"></p>
-        <p th:text="${planetaVisiveis.clima.visibilidade}"></p>
-        <p th:text="${planetaVisiveis.clima.nuvens}"></p>
+        <label>Céu: </label> <label th:text="${planetaVisiveis.clima.ceu}"></label>
+        <br>
+        <label>Visibilidade do céu: </label> <label th:text="${planetaVisiveis.clima.visibilidade}"></label>
+        <br>
+        <label>Número de nuvens: </label> <label th:text="${planetaVisiveis.clima.nuvens}"></label>
 
     </main>
 </body>

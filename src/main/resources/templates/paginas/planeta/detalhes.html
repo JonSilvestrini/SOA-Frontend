@@ -10,13 +10,19 @@
 
 <body>
     <main class="container">
-        
+    	<a th:href="@{/}">Página Inicial</a>
+	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
+	    <a th:href="@{/paginas/terra}">Terra</a>
+	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
+	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
+
+
         <p th:text="${planetaDetalhe.nome}"></p>
         <p th:text="${planetaDetalhe.descricao}"></p>
 
         <figure>
             <img  th:src="${planetaDetalhe.urlImagem}" alt="imagem">
         </figure>
-    </main>    
+    </main>
 </body>
 </html>

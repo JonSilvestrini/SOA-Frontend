@@ -9,6 +9,11 @@
 
 <body>
     <main class="container">
+	    <a th:href="@{/}">Página Inicial</a>
+	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
+	    <a th:href="@{/paginas/terra}">Terra</a>
+	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
+	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
 
         <p th:text="${imagemAleatoria.titulo}"></p>
         <p th:text="${imagemAleatoria.explicacao}"></p>
@@ -17,7 +22,7 @@
         <figure>
             <img th:src="${imagemAleatoria.urlImagem}" alt="imagem aleatoria">
         </figure>
-  
+
     </main>
 </body>
 </html>

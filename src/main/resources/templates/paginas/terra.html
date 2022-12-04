@@ -11,10 +11,16 @@
 <body>
 
 	<main class="container">
+		<a th:href="@{/}">Página Inicial</a>
+	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
+	    <a th:href="@{/paginas/terra}">Terra</a>
+	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
+	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
+
 		<form th:action="@{terra}" method="get">
 			<div>
-				<label for="student-birth-date">Data:</label> <input
-					type="date"  id="student-birth-date" name="data" />
+				<label for="data_terra">Data:</label> <input
+					type="date"  id="data_terra" name="data"/>
 			</div>
 			<div>
 				<button type="submit" class="button">Procurar</button>

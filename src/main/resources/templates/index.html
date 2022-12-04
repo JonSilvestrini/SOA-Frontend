@@ -1,44 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{css/style.css}">
-
-
-    <title>Projeto Arquitetura Orientada a Serviços</title>
+    <title>Trabalho SOA</title>
 </head>
 
 <body>
-    <main>
-        <div class="logotipo">
-            <figure>
-                <img src="/image/Logo_fatec_araras.png" alt="Logotipo Fatec">
-            </figure>
-        </div>
+    <main class="container">
+    <a th:href="@{/}">Página Inicial</a>
+    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
+    <a th:href="@{/paginas/terra}">Terra</a>
+    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
+    <a th:href="@{/paginas/integrantes}">Integrantes</a>
+
     </main>
-
-    <div class="titulo centro">
-        <h1>Arquitetura Orientada a Serviços</h1>
-    </div>
-
-    <div class="nasa centro">
-        <figure>
-            <img src="/image/nasa-api.PNG" alt="API NASA">
-        </figure>
-    </div>
-
-    <div class="botao centro">
-        <a th:href="@{/paginas/planeta}" class="btn btn-outline-secondary btn-lg active" role="button" aria-pressed="true"  target="_blank">Consultar API</a>
-
-        <a th:href="@{/paginas/integrantes}" class="btn btn-outline-secondary btn-lg active" role="button" aria-pressed="true"  target="_blank">Integrantes</a>
-    </div>
-
-    <p th:text="${isAlive.msg}" />
-
 </body>
 </html>
