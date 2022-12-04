@@ -28,10 +28,13 @@
 		</form>
 
         <div th:each="terra : ${terraImagem}">
+            <label>Data: </label> <label th:text="${terra.dateTime}"></label>
+            <br>
+            <label>Lat: </label> <label th:text="${terra.coord.lat}"></label>
+            <br>
+            <label>Lon: </label> <label th:text="${terra.coord.lon}"></label>
+            <br>
             <img th:src="${terra.urlImage}" alt="">
-            <p th:text="${terra.dateTime}"></p>
-            <p th:text="${terra.coord.lat}"></p>
-            <p th:text="${terra.coord.lon}"></p>
         </div>
 
 
