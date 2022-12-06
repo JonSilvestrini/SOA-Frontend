@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" th:href="@{/css/base.css}">
+<link rel="stylesheet" th:href="@{/css/paginas/terra.css}">
 <title>Planeta Terra</title>
 </head>
 
@@ -37,12 +38,28 @@
 			</div>
 		</form>
 
-		<div th:each="terra : ${terraImagem}">
-			<label>Data: </label> <label th:text="${terra.dateTime}"></label> <br>
-			<label>Lat: </label> <label th:text="${terra.coord.lat}"></label> <br>
-			<label>Lon: </label> <label th:text="${terra.coord.lon}"></label> <br>
-			<img th:src="${terra.urlImage}" alt="">
-		</div>
+	<section class="carousel" aria-label="Gallery">
+	<ol class="carousel__viewport">
+
+		<li th:each="terra,iterStat : ${terraImagem}" th:id="${iterStat.count}" tabindex="0" class="carousel__slide">
+			<div class="carousel__snapper">
+				<a th:href="${iterStat.count} eq 1 ? '#' + ${iterStat.size} : '#' + ${iterStat.count-1}" class="carousel__prev">Go to last slide</a>
+	        	<img th:src="${terra.urlImage}" alt="">
+	        	<a th:href="${iterStat.count} eq ${iterStat.size} ? '#1' : '#' + ${iterStat.count+1}" class="carousel__next">Go to next slide</a>
+			</div>
+		</li>
+
+	</ol>
+
+	</section>
+
+
+<!-- 		<div th:each="terra : ${terraImagem}"> -->
+<!-- 			<label>Data: </label> <label th:text="${terra.dateTime}"></label> <br> -->
+<!-- 			<label>Lat: </label> <label th:text="${terra.coord.lat}"></label> <br> -->
+<!-- 			<label>Lon: </label> <label th:text="${terra.coord.lon}"></label> <br> -->
+<!-- 			<img th:src="${terra.urlImage}" alt=""> -->
+<!-- 		</div> -->
 
 
 	</main>
