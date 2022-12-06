@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrades do Projeto - SOA</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/css/base.css}">
+<title>Integrades do Projeto - SOA</title>
 </head>
 
 <body>
-    <main>
-	    <a th:href="@{/}">Página Inicial</a>
-	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
-	    <a th:href="@{/paginas/terra}">Terra</a>
-	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
-	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
+	<main>
+		<header class="top-nav">
+			<div class="logo">
+				<a th:href="@{/}">Space Marvelous</a>
+			</div>
+			<input id="menu-toggle" type="checkbox" /> <label
+				class='menu-button-container' for="menu-toggle">
+				<div class='menu-button'></div>
+			</label>
+			<ul class="menu">
+				<li><a th:href="@{/paginas/planetas/visiveis}">Planetas</a></li>
+				<li><a th:href="@{/paginas/terra}">Terra</a></li>
+				<li><a th:href="@{/paginas/imagem}">Imagem Aleatória</a></li>
+				<li><a th:href="@{/paginas/integrantes}">Integrantes</a></li>
+			</ul>
+		</header>
 
-        <article>
-            <h1>Luis Alberto Gomes</h1>
+		<article>
+			<h1>Luis Alberto Gomes</h1>
 
-            <h1>Jonatas Silvestrini</h1>
+			<h1>Jonatas Silvestrini</h1>
 
-            <h1>José Carlos Santos</h1>
-        </article>
+			<h1>José Carlos Santos</h1>
+		</article>
 
 
-    </main>
+	</main>
 </body>
 </html>

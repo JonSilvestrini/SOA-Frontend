@@ -4,23 +4,33 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="stylesheet" th:href="@{/css/base.css}">
 <title>Planeta Terra</title>
 </head>
 
 <body>
 
 	<main class="container">
-		<a th:href="@{/}">Página Inicial</a>
-	    <a th:href="@{/paginas/planetas/visiveis}">Planetas</a>
-	    <a th:href="@{/paginas/terra}">Terra</a>
-	    <a th:href="@{/paginas/imagem}">Imagem Aleatória</a>
-	    <a th:href="@{/paginas/integrantes}">Integrantes</a>
+		<header class="top-nav">
+			<div class="logo">
+				<a th:href="@{/}">Space Marvelous</a>
+			</div>
+			<input id="menu-toggle" type="checkbox" /> <label
+				class='menu-button-container' for="menu-toggle">
+				<div class='menu-button'></div>
+			</label>
+			<ul class="menu">
+				<li><a th:href="@{/paginas/planetas/visiveis}">Planetas</a></li>
+				<li><a th:href="@{/paginas/terra}">Terra</a></li>
+				<li><a th:href="@{/paginas/imagem}">Imagem Aleatória</a></li>
+				<li><a th:href="@{/paginas/integrantes}">Integrantes</a></li>
+			</ul>
+		</header>
 
 		<form th:action="@{terra}" method="get">
 			<div>
-				<label for="data_terra">Data:</label> <input
-					type="date"  id="data_terra" name="data"/>
+				<label for="data_terra">Data:</label> <input type="date"
+					id="data_terra" name="data" />
 			</div>
 			<div>
 				<button type="submit" class="button">Procurar</button>
