@@ -21,6 +21,4 @@ public class WebClientEngine<T> {
                 .bodyToMono(typeReference)
                 .block();
     }
-
-
 }

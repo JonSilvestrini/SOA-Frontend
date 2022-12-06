@@ -4,27 +4,21 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link
-	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <title>SPACE MARVELOUS :: API</title>
 
 <!-- Link Bootstrap -->
-<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
-	rel="stylesheet">
-
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 
 <!-- Links CSS -->
 <link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
 <link rel="stylesheet" th:href="@{/assets/css/style.css}">
 <link rel="stylesheet" th:href="@{/assets/css/owl.css}">
 <link rel="stylesheet" th:href="@{/assets/css/animate.css}">
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 </head>
 
@@ -35,7 +29,9 @@
 		<div class="preloader-inner">
 			<span class="dot"></span>
 			<div class="dots">
-				<span></span> <span></span> <span></span>
+				<span></span> 
+				<span></span> 
+				<span></span>
 			</div>
 		</div>
 	</div>
@@ -55,6 +51,7 @@
 						<!-- ***** Pesquisar Início ***** -->
 						<!-- ***** Pesquisar Fim ***** -->
 						<!-- ***** Menu Início ***** -->
+
 						<ul class="nav">
 							<li><a th:href="@{/paginas/planetas/visiveis}">Planetas</a></li>
 							<li><a th:href="@{/paginas/terra}" class="active">Terra</a></li>
@@ -72,26 +69,25 @@
 	<!-- ***** Header Fim ***** -->
 
 	<div class="container">
+
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-content">
 
 					<form th:action="@{terra}" method="get" id="form-terra">
-						<div class="search-input">
-							<input type="date" id="data_terra" name="data" />
+						<div class="search-input pesquisarData">
+							<input type="date" id="data_terra" name="data"/>
 						</div>
+
 						<div class="main-border-button">
 							<a href=# onclick="document.getElementById('form-terra').submit()">Pesquisar</a>
-
 						</div>
 					</form>
-
 				</div>
 			</div>
 		</div>
+
 	</div>
-
-
 
 	<!-- ***** Footer Início ***** -->
 	<footer>
@@ -121,5 +117,18 @@
 
 
 </body>
+
+<style>
+	.pesquisarData{
+		margin-bottom: 30px;
+	}
+	.pesquisarData input{
+		width: 200px;
+		height: 50px;
+		padding: 10px;
+		border-radius: 10px;
+		border: none;
+	}
+</style>
 
 </html>

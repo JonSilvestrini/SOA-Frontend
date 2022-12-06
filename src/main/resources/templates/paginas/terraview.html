@@ -1,67 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" th:href="@{/css/base.css}">
-<link rel="stylesheet" th:href="@{/css/paginas/terra.css}">
-<title>Planeta Terra</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<title>SPACE MARVELOUS :: API</title>
+
+<!-- Link Bootstrap -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+<!-- Links CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
+<link rel="stylesheet" th:href="@{/assets/css/style.css}">
+<link rel="stylesheet" th:href="@{/assets/css/owl.css}">
+<link rel="stylesheet" th:href="@{/assets/css/animate.css}">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
 </head>
 
 <body>
 
-	<main class="container">
-		<header class="top-nav">
-			<div class="logo">
-				<a th:href="@{/}">Space Marvelous</a>
+	<!-- ***** Preloader Início ***** -->
+	<div id="js-preloader" class="js-preloader">
+		<div class="preloader-inner">
+			<span class="dot"></span>
+			<div class="dots">
+				<span></span> 
+				<span></span> 
+				<span></span>
 			</div>
-			<input id="menu-toggle" type="checkbox" /> <label
-				class='menu-button-container' for="menu-toggle">
-				<div class='menu-button'></div>
-			</label>
-			<ul class="menu">
-				<li><a th:href="@{/paginas/planetas/visiveis}">Planetas</a></li>
-				<li><a th:href="@{/paginas/terra}">Terra</a></li>
-				<li><a th:href="@{/paginas/imagem}">Imagem Aleatória</a></li>
-				<li><a th:href="@{/paginas/integrantes}">Integrantes</a></li>
-			</ul>
-		</header>
+		</div>
+	</div>
+	<!-- ***** Preloader Fim ***** -->
 
-		<form th:action="@{terra}" method="get">
-			<div>
-				<label for="data_terra">Data:</label> <input type="date"
-					id="data_terra" name="data" th:value="${data}" />
+	<!-- ***** Header Início ***** -->
+	<header class="header-area header-sticky">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="main-nav">
+						<!-- ***** Logo Início ***** -->
+						<a th:href="@{/}" class="logo"> <img
+							src="/assets/images/logo.png" alt="Logo Space Marvelous">
+						</a>
+						<!-- ***** Logo Fim ***** -->
+						<!-- ***** Pesquisar Início ***** -->
+                        <div class="search-input">
+                            <form id="search" action="#">
+                              <input type="text" placeholder="Pesquisar" id='searchText' name="searchKeyword" onkeypress="handle" />
+                              <i class="fa fa-search"></i>
+                            </form>
+                        </div>
+						<!-- ***** Pesquisar Fim ***** -->
+						<!-- ***** Menu Início ***** -->
+
+						<ul class="nav">
+							<li><a th:href="@{/paginas/planetas/visiveis}">Planetas</a></li>
+							<li><a th:href="@{/paginas/terra}" class="active">Terra</a></li>
+							<li><a th:href="@{/paginas/imagem}">Imagem Aleatória</a></li>
+							<li><a th:href="@{/paginas/integrantes}">Integrantes</a></li>
+						</ul>
+						<a class='menu-trigger'> <span>Menu</span>
+						</a>
+						<!-- ***** Menu Fim ***** -->
+					</nav>
+				</div>
 			</div>
-			<div>
-				<button type="submit" class="button">Procurar</button>
+		</div>
+	</header>
+	<!-- ***** Header Fim ***** -->
+
+	<div class="container">
+
+		<!-- <div class="row">
+			<div class="col-lg-12">
+				<div class="page-content">
+
+					<form th:action="@{terra}" method="get" id="form-terra">
+						<div class="search-input pesquisarData">
+							<input type="date" id="data_terra" name="data"/>
+						</div>
+
+						<div class="main-border-button">
+							<a href=# onclick="document.getElementById('form-terra').submit()">Pesquisar</a>
+						</div>
+					</form>
+				</div>
 			</div>
-		</form>
+		</div> -->
 
-	<section class="carousel" aria-label="Gallery">
-	<ol class="carousel__viewport">
+        <!-- <ol class="carousel__viewport">
 
-		<li th:each="terra,iterStat : ${terraImagem}" th:id="${iterStat.count}" tabindex="0" class="carousel__slide">
-			<div class="carousel__snapper">
-				<a th:href="${iterStat.count} eq 1 ? '#' + ${iterStat.size} : '#' + ${iterStat.count-1}" class="carousel__prev">Go to last slide</a>
-	        	<img th:src="${terra.urlImage}" alt="">
-	        	<a th:href="${iterStat.count} eq ${iterStat.size} ? '#1' : '#' + ${iterStat.count+1}" class="carousel__next">Go to next slide</a>
+			<li th:each="terra,iterStat : ${terraImagem}" th:id="${iterStat.count}" tabindex="0" class="carousel__slide">
+
+				<div class="carousel__snapper">
+					<a th:href="${iterStat.count} eq 1 ? '#' + ${iterStat.size} : '#' + ${iterStat.count-1}" class="carousel__prev">Go to last slide</a>
+					<img th:src="${terra.urlImage}" alt="">
+					<a th:href="${iterStat.count} eq ${iterStat.size} ? '#1' : '#' + ${iterStat.count+1}" class="carousel__next">Go to next slide</a>
+				</div>
+			</li>
+		</ol> -->
+
+		<div class="row">
+			<div class="col-lg-12">
+			<div class="page-content">
+	  
+				<div class="row">
+				  	<div class="col-lg-12">
+	
+						<div class="featured-games header-text">
+		
+						<div class="heading-section">
+							<h4><em>Planeta</em>&nbsp;&nbsp;&nbsp;Terra</h4>
+						</div>
+		
+						<div class="owl-features owl-carousel">
+							<div th:each="terra : ${terraImagem}" class="item">
+                                
+                                <div class="thumb">
+                                    <img th:src="${terra.urlImage}" alt="descritivo da imagem">
+
+                                    <div class="hover-effect">
+                                        <h6>Terra</h6>
+                                    </div>
+                                </div>
+            
+                                <h4>Terra<br><span>Imagem da terra com suas coordenadas</span></h4>
+                                <ul>
+                                    <li><i class="fa fa-star"></i><p th:text="${terra.coord.lat}"></p></li>
+                                    <li><i class="fa fa-moon"></i><p th:text="${terra.coord.lon}"></p></li>
+                                </ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
-		</li>
+			</div>
+		</div>
 
-	</ol>
+	</div>
 
-	</section>
+	<!-- ***** Footer Início ***** -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2022 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">SPACE
+							MARVELOUS</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Todos os direitos
+						reservados.
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ***** Footer Fim ***** -->
+
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+	<script th:src="@{/assets/js/isotope.min.js}"></script>
+	<script th:src="@{/assets/js/owl-carousel.js}"></script>
+	<script th:src="@{/assets/js/tabs.js}"></script>
+	<script th:src="@{/assets/js/popup.js}"></script>
+	<script th:src="@{/assets/js/custom.js}"></script>
 
 
-<!-- 		<div th:each="terra : ${terraImagem}"> -->
-<!-- 			<label>Data: </label> <label th:text="${terra.dateTime}"></label> <br> -->
-<!-- 			<label>Lat: </label> <label th:text="${terra.coord.lat}"></label> <br> -->
-<!-- 			<label>Lon: </label> <label th:text="${terra.coord.lon}"></label> <br> -->
-<!-- 			<img th:src="${terra.urlImage}" alt=""> -->
-<!-- 		</div> -->
-
-
-	</main>
 </body>
+
+<style>
+	.pesquisarData{
+		margin-bottom: 30px;
+	}
+	.pesquisarData input{
+		width: 200px;
+		height: 50px;
+		padding: 10px;
+		border-radius: 10px;
+		border: none;
+	}
+</style>
+
 </html>
